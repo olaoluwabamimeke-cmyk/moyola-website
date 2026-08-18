@@ -3,65 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Moyola and Co Matchmakers connects serious singles seeking friendship, meaningful relationships and marriage.">
+
     <title>Moyola and Co Matchmakers</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header id="home">
-    <h1>Moyola and Co Matchmakers</h1>
-    <h2>Find Love That Leads to Marriage 💍</h2>
-    <p>We connect serious singles ready for real relationships.</p>
+<header class="navbar">
+    <div class="logo">Moyola & Co 💍</div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#join">Join Us</a>
-    <a href="#contact">Contact</a>
-</nav>
+<section id="home" class="hero">
 
-<section class="hero">
-    <div class="image-box">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Couple">
-        <div class="overlay">Looking for Love? 💖</div>
+    <div class="hero-content">
+        <p class="small-title">WELCOME TO MOYOLA & CO</p>
+
+        <h1>Find Love That<br><span>Leads to Marriage 💍</span></h1>
+
+        <p>
+            We connect serious singles ready for genuine friendship,
+            meaningful relationships and lasting love.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#join" class="btn primary">Join Our Program</a>
+            <a href="#services" class="btn secondary">Explore Services</a>
+        </div>
     </div>
 
-    <div class="image-box">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Person">
-        <div class="overlay">We Match You Right 💕</div>
+    <div class="hero-images">
+        <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+                 alt="Woman smiling">
+            <div class="image-text">Looking for Love? ❤️</div>
+        </div>
+
+        <div class="image-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                 alt="Man smiling">
+            <div class="image-text">We Match You Right 💖</div>
+        </div>
     </div>
+
 </section>
 
-<section class="section">
-    <h2>About Us</h2>
-    <p>
-        Our business helps connect serious singles for meaningful
-        relationships, friendship, love and ultimately marriage.
+<section id="about" class="section">
+
+    <p class="section-label">WHO WE ARE</p>
+
+    <h2>About Moyola & Co</h2>
+
+    <p class="section-text">
+        Moyola and Co Matchmakers is a matchmaking platform designed
+        for serious singles who desire meaningful connections.
+        We help people connect for friendship, love and ultimately marriage.
     </p>
+
 </section>
 
-<section class="section" id="services">
+<section id="services" class="section light-section">
+
+    <p class="section-label">WHAT WE DO</p>
+
     <h2>Our Services</h2>
 
     <div class="services">
-        <div class="card">💖 Relationship Matching</div>
-        <div class="card">🤝 Friendship Connections</div>
-        <div class="card">💍 Marriage Pairing</div>
+
+        <div class="card">
+            <div class="icon">💖</div>
+            <h3>Relationship Matching</h3>
+            <p>
+                Connect with people who share your relationship goals.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Friendship Connections</h3>
+            <p>
+                Build genuine friendships that can grow into something meaningful.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💍</div>
+            <h3>Marriage Pairing</h3>
+            <p>
+                Meet serious-minded singles looking toward marriage.
+            </p>
+        </div>
+
     </div>
+
 </section>
 
-<section class="section" id="join">
-    <h2>Join Our Matchmaking Program</h2>
+<section id="join" class="section join-section">
 
-    <form onsubmit="sendToWhatsApp(); return false;">
+    <p class="section-label">TAKE THE FIRST STEP</p>
+
+    <h2>Join Our Matchmaking Program 💕</h2>
+
+    <p class="section-text">
+        Tell us a little about yourself and what you're looking for.
+    </p>
+
+    <form id="matchForm">
 
         <input type="text" id="name"
                placeholder="Full Name" required>
 
         <input type="number" id="age"
-               placeholder="Age" required>
+               placeholder="Age" min="18" required>
 
         <select id="gender" required>
             <option value="">Select Gender</option>
@@ -70,7 +136,7 @@
         </select>
 
         <select id="looking" required>
-            <option value="">Looking For</option>
+            <option value="">What are you looking for?</option>
             <option value="Friendship">Friendship</option>
             <option value="Relationship">Relationship</option>
             <option value="Marriage">Marriage</option>
@@ -78,71 +144,126 @@
 
         <textarea id="about"
                   placeholder="Tell us about yourself"
-                  required></textarea>
+                  rows="5"></textarea>
 
-        <button type="submit">Submit 💖</button>
+        <label class="consent">
+            <input type="checkbox" id="consent" required>
+            I confirm that the information I provided is accurate.
+        </label>
+
+        <button type="submit" class="submit-btn">
+            Send Application 💌
+        </button>
 
     </form>
+
 </section>
 
-<section class="section contact" id="contact">
-    <h2>Contact Us</h2>
+<section class="section light-section">
 
-    <a href="https://wa.me/2347079355962">
-        Chat on WhatsApp
-    </a>
+    <p class="section-label">REAL CONNECTIONS</p>
 
-    <a href="tel:07079355962">
-        Call 1
-    </a>
-
-    <a href="tel:08082182531">
-        Call 2
-    </a>
-</section>
-
-<section class="section">
     <h2>Success Stories 💖</h2>
 
-    <div class="card">
-        “I found my partner here in 3 weeks. Thank you Moyola!”
-        – Sarah
+    <div class="stories">
+
+        <div class="story">
+            <div class="stars">★★★★★</div>
+            <p>
+                “I found my partner here in just a few weeks.
+                Thank you Moyola!”
+            </p>
+            <strong>— Sarah</strong>
+        </div>
+
+        <div class="story">
+            <div class="stars">★★★★★</div>
+            <p>
+                “This platform helped me meet someone serious.
+                We are now planning our future together.”
+            </p>
+            <strong>— David</strong>
+        </div>
+
     </div>
 
-    <div class="card">
-        “This platform is real. I met my fiancé here.”
-        – David
+</section>
+
+<section id="contact" class="section contact">
+
+    <p class="section-label">GET IN TOUCH</p>
+
+    <h2>Let's Connect 💕</h2>
+
+    <p>
+        Ready to take the first step?
+        Reach out to us today.
+    </p>
+
+    <div class="contact-buttons">
+
+        <a href="https://wa.me/2349136514100"
+           class="whatsapp">
+            💬 WhatsApp
+        </a>
+
+        <a href="tel:09136514100"
+           class="call">
+            📞 Call Us
+        </a>
+
     </div>
+
 </section>
 
 <footer>
-    <p>© 2026 Moyola and Co Matchmakers</p>
+
+    <h3>Moyola & Co Matchmakers 💍</h3>
+
+    <p>
+        Connecting hearts. Building relationships.
+    </p>
+
+    <p class="copyright">
+        © 2026 Moyola and Co Matchmakers. All rights reserved.
+    </p>
+
 </footer>
 
 <script>
-function sendToWhatsApp() {
 
-    var name = document.getElementById("name").value;
-    var age = document.getElementById("age").value;
-    var gender = document.getElementById("gender").value;
-    var looking = document.getElementById("looking").value;
-    var about = document.getElementById("about").value;
+function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("active");
+}
 
-    var message =
-        "Hello, I want to join Moyola and Co Matchmakers:%0A%0A" +
-        "Name: " + name + "%0A" +
-        "Age: " + age + "%0A" +
-        "Gender: " + gender + "%0A" +
-        "Looking For: " + looking + "%0A" +
-        "About: " + about;
+document.getElementById("matchForm").addEventListener("submit", function(event) {
 
-    var phone = "2347079355962";
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const looking = document.getElementById("looking").value;
+    const about = document.getElementById("about").value;
+
+    const message =
+        "Hello, I want to join Moyola and Co Matchmakers.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Age: " + encodeURIComponent(age) + "%0A" +
+        "Gender: " + encodeURIComponent(gender) + "%0A" +
+        "Looking For: " + encodeURIComponent(looking) + "%0A" +
+        "About: " + encodeURIComponent(about);
+
+    const phone = "2349136514100";
 
     window.open(
         "https://wa.me/" + phone + "?text=" + message,
         "_blank"
     );
-}
+
+});
+
 </script>
 
 </body>
